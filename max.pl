@@ -1,4 +1,9 @@
-max(X,Y) :-
-    X=Y, write("Both numbers are equal.");
-    X>Y, M is X, write(M);
-    M is Y, write(M).
+max(X,Y,M) :-
+    (X =:= Y ->
+        write('Both numbers are equal'), nl,
+        M is X
+    ; X>Y ->
+        M is X
+    ;
+        M is Y
+    ).
